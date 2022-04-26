@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-first = False
+notfirst = False
 for i in range(10):
     for j in range(i+1, 10):
-        if first:
+        if notfirst:
             print(end=', ')
         else:
-            first = True
+            notfirst = True
         print(f"{i}{j}", end='')
 print()
