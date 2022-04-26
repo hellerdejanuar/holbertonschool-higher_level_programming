@@ -1,3 +1,4 @@
+#!/user/bin/python3
 def fizzbuzz():
     for i in range(1,100):
         flag = False
