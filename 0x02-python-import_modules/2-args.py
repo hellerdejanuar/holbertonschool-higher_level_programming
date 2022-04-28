@@ -10,5 +10,5 @@ if __name__ == "__main__":
     print(f"{argc - 1} argument{plural}{term}")
 
     if argc > 1:
-        for i in range(argc):
+        for i in range(1, argc):
             print(f"{i}: {argv[i]}")
