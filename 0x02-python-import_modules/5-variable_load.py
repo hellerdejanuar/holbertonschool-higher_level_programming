@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 if __name__ == "__main__":
-    import variable_load_5 as file_
-    print(file_.a)
+    from variable_load_5 import a
+    print(f"{a}")
