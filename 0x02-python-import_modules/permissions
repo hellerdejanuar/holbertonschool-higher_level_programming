@@ -1,0 +1,4 @@
+#!/bin/bash
+chmod -f u+x *.py
+chmod -f u+x *.c
+echo "permissions granted"
