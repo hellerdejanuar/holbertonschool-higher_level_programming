@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
 def no_c(my_string):
+    if not my_string:
+        return (my_string)
     str_len = len(my_string)
     x = 0
     i = 0
