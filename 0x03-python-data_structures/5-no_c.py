@@ -1,10 +1,14 @@
-#!/busr/bin/pyhton3
+#!/usr/bin/python3
 
 def no_c(my_string):
     str_len = len(my_string)
     x = 0
+    i = 0
+    new_string = ""
 
-    for i in range(str_len - 1):
+    while i < str_len:
         if (my_string[i] == 'c' or my_string[i] == 'C'):
-            x += 1    
-        my_string[i] == my_string[i + x]
+            i += 1
+        new_string += my_string[i]
+        i += 1
+    return (new_string)
