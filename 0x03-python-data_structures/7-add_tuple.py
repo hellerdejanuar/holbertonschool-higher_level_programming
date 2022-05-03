@@ -9,12 +9,13 @@ def add_tuple(tuple_a=(), tuple_b=()):
     for tupl in tuple_ar:
         va_i = 0
 
-        if tp_i >= len(result):
-            break
-
         for elem in tupl:
+            if va_i >= len(result):
+                break
+
             result[va_i] += elem
             va_i += 1
+
         tp_i += 1
 
     result_tpl = (result[0], result[1])
