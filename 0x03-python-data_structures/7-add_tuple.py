@@ -13,7 +13,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
             break
 
         for elem in tupl:
-            result[j] += elem
+            result[va_i] += elem
             va_i += 1
         tp_i += 1
 
