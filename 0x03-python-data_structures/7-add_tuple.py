@@ -9,7 +9,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
     for tupl in tuple_ar:
         va_i = 0
 
-        if tp_i >= len(result):
+        if tp_i >= len(result) - 1:
             break
 
         for elem in tupl:
