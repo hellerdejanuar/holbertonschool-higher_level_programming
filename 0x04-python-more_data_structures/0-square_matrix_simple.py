@@ -6,9 +6,6 @@ def square_matrix_simple(matrix=[]):
     for i, row in enumerate(matrix):
         new_matrix.append([])
         for j, elem in enumerate(row):
-            new_matrix[i].append(power_2(row[j]))
+            new_matrix[i].append(row[j] * row[j])
 
     return new_matrix
-
-def power_2(n):
-    return (n * n)
