@@ -16,15 +16,18 @@ class Square:
 
     def my_print(self):
         """prints square with # """
-        for lines in range(self.position[0]):
+        if self.size == 0:
             print()
+            return
+
+        if position[1] > 0:
+            for lines in range(self.position[1]):
+                print()
         for i in range(self.size):
-            for spaces in range(self.position[1]):
+            for spaces in range(self.position[0]):
                 print(" ", end="")
             for j in range(self.size):
                 print("#",end="")
-            print()
-        if self.size == 0:
             print()
 
     @property
@@ -52,9 +55,9 @@ class Square:
         """changes position of square, receives (x,y) tuple"""
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        if not isinstance(value[0], int) or isinstance(value[1], int):
+        if not isinstance(value[0], int) or not isinstance(value[1], int):
             raise TypeError("position must be a tuple of 2 positive integers")
         if value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-        self.__position = value
+            self.__position = value
