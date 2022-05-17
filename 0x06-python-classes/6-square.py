@@ -5,7 +5,7 @@
 class Square:
     """this class defines a square"""
 
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         """Initializes square"""
         self.size = size
         self.position = position
@@ -27,7 +27,7 @@ class Square:
             for spaces in range(self.position[0]):
                 print(" ", end="")
             for j in range(self.size):
-                print("#",end="")
+                print("#", end="")
             print()
 
     @property
@@ -45,7 +45,7 @@ class Square:
         else:
             self.__size = size
 
-    @property 
+    @property
     def position(self):
         """retrieves position"""
         return self.__position
