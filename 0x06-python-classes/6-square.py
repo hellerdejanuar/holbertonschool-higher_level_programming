@@ -20,7 +20,7 @@ class Square:
             print()
             return
 
-        if position[1] > 0:
+        if self.position[1] > 0:
             for lines in range(self.position[1]):
                 print()
         for i in range(self.size):
