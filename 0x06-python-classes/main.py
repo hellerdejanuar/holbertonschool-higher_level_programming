@@ -10,7 +10,7 @@ my_square_2 = Square(3, (1, 1))
 my_square_2.my_print()
 
 print("--")
-my_square_2.position(4, 4)
+my_square_2.position((4, 4))
 my_square_2.my_print()
 
 print("--")

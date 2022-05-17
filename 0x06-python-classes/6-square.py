@@ -45,16 +45,16 @@ class Square:
     @property 
     def position(self):
         """retrieves position"""
-        return (self.__position)
+        return self.__position
 
     @position.setter
     def position(self, value):
         """changes position of square, receives (x,y) tuple"""
-        #if not isinstance(value, tuple) or len(value) != 2:
-        #    raise TypeError("position must be a tuple of 2 positive integers")
-        #if not isinstance(value[0], int) or isinstance(value[1], int):
-        #    raise TypeError("position must be a tuple of 2 positive integers")
-        #if value[0] < 0 or value[1] < 0:
-        #    raise TypeError("position must be a tuple of 2 positive integers")
-        #else:
+        if not isinstance(value, tuple) or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not isinstance(value[0], int) or isinstance(value[1], int):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if value[0] < 0 or value[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
         self.__position = value
