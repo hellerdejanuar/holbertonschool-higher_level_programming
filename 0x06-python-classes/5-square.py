@@ -17,7 +17,7 @@ class Square:
         """prints square with # """
         for i in range(self.size):
             for j in range(self.size):
-                print("#",end="")
+                print("#", end="")
             print()
         if self.size == 0:
             print()
