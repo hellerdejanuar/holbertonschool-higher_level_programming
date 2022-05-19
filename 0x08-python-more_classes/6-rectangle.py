@@ -11,7 +11,7 @@ class Rectangle:
         """initialize rectangle"""
         self.height = height
         self.width = width
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     def __repr__(self):
         """representation of rectangle to recreate"""
@@ -27,7 +27,7 @@ class Rectangle:
     def __del__(self):
         """delete rectangle routine"""
         print("Bye rectangle...")
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
 
     def area(self):
         """area: width * height"""
