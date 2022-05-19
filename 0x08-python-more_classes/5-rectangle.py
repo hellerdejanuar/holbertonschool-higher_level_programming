@@ -21,6 +21,10 @@ class Rectangle:
         else:
             return (f"{'#'*self.width}\n"*self.height).strip('\n')
 
+    def __del__(self):
+        """delete rectangle"""
+        print("Bye rectangle...")
+
     def area(self):
         """area: width * height"""
         return self.__width * self.__height

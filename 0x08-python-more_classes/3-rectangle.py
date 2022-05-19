@@ -11,11 +11,7 @@ class Rectangle:
         self.width = width
 
     def __str__(self):
-        """returns the graphical representation of the rectangle"""
-        if self.height == 0 or self.width == 0:
-            return ""
-        else:
-            return (f"{'#'*self.width}\n"*self.__height).strip("\n")
+        return f"{'#' * self.height}"
 
     def area(self):
         """Calculates area of rectangle"""
