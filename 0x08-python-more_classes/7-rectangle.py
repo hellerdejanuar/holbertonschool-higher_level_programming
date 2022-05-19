@@ -6,7 +6,7 @@ class Rectangle:
     """Rectangle"""
 
     number_of_instances = 0
-    print_symbol = '#'
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """initialize rectangle"""
@@ -23,7 +23,7 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return ""
         else:
-            return (f"{Rectangle.print_symbol*self.width}\n"*self.height).strip('\n')
+            return (f"{str(self.print_symbol)*self.width}\n"*self.height).strip('\n')
 
     def __del__(self):
         """delete rectangle routine"""
