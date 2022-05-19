@@ -13,6 +13,7 @@ class Rectangle:
         """returns a new rectangle width == height"""
         return cls(size, size)
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """return biggest rectangle based on area """
         if not isinstance(rect_1, Rectangle):
