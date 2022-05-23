@@ -39,7 +39,8 @@ def matrix_divided(matrix, div):
 
 
     for i, row in enumerate(matrix):
-
+        if len(row) != first_row_len:
+            _raiseError("dif_len")
         if not isinstance(row, list):
             _raiseError("not_matrix")
         else:
@@ -47,9 +48,9 @@ def matrix_divided(matrix, div):
 
         for elem in row:
 
-            if not isinstance(elem, (list, float)):
+            if not isinstance(elem, (int, float)):
                 _raiseError("not_matrix")
             else:
-                new_matrix[i].append(elem)
+                new_matrix[i].append(round(elem / div, 2))
 
     return new_matrix

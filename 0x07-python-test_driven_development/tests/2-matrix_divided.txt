@@ -8,9 +8,7 @@ This fucntion takes a matrix of ints as the first arg and returns another matrix
 divided by the second argument.
 
 	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
-	>>> matrix = [
-	[1, 2, 3],
-	[4, 5, 6]]
+	>>> matrix = [[1, 2, 3],[4, 5, 6]]
 
 TESTS:
 	=== Division by Zero === 
@@ -21,14 +19,14 @@ TESTS:
 
 	=== Negative ===
 	>>> matrix_divided(matrix, -1)
-	[[-1, -2, -3], [-4, -5, -6]]
-	
+	[[-1.0, -2.0, -3.0], [-4.0, -5.0, -6.0]]
+
 	=== Float ===
-	>>> matrix_divided([[1, 5.5][3, 5]], 0.1)
-	[[10, 55][35, 50]]
+	>>> matrix_divided([[1, 5.5], [3, 5]], 0.1)
+	[[10.0, 55.0], [30.0, 50.0]]
 
 	=== Different row size ===
-	>>> matrix_divided([1][1,2])
+	>>> matrix_divided([[1], [1,2]], 3)
 	Traceback (most recent call last):
 		...
 	TypeError: Each row of the matrix must have the same size
@@ -37,10 +35,10 @@ TESTS:
 	>>> matrix_divided(matrix,"two")
 	Traceback (most recent call last):
 		...
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
+	TypeError: div must be a number
 
 	=== Not int or float ===
-	>>> matrix_divided([[1,"flop"][3,4]], 4)
+	>>> matrix_divided([[1,"flop"],[3,4]], 4)
 	Traceback (most recent call last):
 		...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
