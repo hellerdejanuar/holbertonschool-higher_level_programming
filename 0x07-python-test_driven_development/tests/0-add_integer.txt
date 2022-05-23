@@ -1,0 +1,43 @@
+The ''add_integer'' module
+=======================
+
+Using ''add_integer()''
+-----------------------
+
+This function adds two integers and return the result
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+TESTS:
+	=== Zero ===
+	>>> add_integer(0,0)
+	0
+
+	=== Negative ===
+	>>> add_integer(-1,400)
+	399
+	
+	=== Float ===
+	>>> add_integer(0.9, 1)
+	1
+
+	=== Strings ===
+	>>> add_integer("ten","two")
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+	=== Empty arg 2 ===
+	>>> add_integer(0,)
+	98
+
+	=== Empty arg 1 ===
+	>>> add_integer(,0)
+	Traceback (most recent call last):
+		...
+	SyntaxError: invalid syntax
+
+	=== Extra arguments ===
+	>>> add_integer (24,42,24)
+	Traceback (most recent call last):
+		...
+	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
