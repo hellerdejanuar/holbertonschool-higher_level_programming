@@ -2,7 +2,10 @@
 """ add integer module """
 
 def add_integer(a, b=98):
-    """ returns the sum of two integers """
+    """ returns the sum of two integers
+    
+        Works with numbers
+    """
 
     if not isinstance(a, (float, int)):
         raise TypeError("a must be an integer")
