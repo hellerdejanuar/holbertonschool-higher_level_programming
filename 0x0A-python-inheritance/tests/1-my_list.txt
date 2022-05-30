@@ -1,0 +1,34 @@
+The ''my_list'' module
+=======================
+
+Using ''print_sorted()''
+-----------------------
+
+This function prinst a list in ascending order.
+
+	>>> MyList = __import__('1-my_list').MyList
+	>>> this_list = MyList()
+	>>> this_list.append('Altura')
+	>>> this_list.append('Expensiva')
+	>>> this_list.append('Bandida')
+	>>> this_list.append('Coqueta')
+
+TESTS:
+	=== print list ===
+	>>> this_list.print_sorted()
+	['Altura', 'Bandida', 'Coqueta', 'Expensiva']
+
+	=== print int list ===
+
+	>>> b = MyList()
+	>>> b.append(2)
+	>>> b.append(3)
+	>>> b.append(1)
+	
+	>>> b.print_sorted()
+	[1, 2, 3]
+
+
+	Traceback (most recent call last):
+		...
+	ZeroDivisionError: division by zero
