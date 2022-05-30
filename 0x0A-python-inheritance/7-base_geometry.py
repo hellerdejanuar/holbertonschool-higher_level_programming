@@ -4,6 +4,7 @@ class BaseGeometry():
     """ Base Geometr Class """
 
     def integer_validator(self, name, value):
+        """ validates value """
         if type(value) != int:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
