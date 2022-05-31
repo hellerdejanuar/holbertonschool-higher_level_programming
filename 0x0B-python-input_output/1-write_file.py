@@ -8,5 +8,6 @@ def write_file(filename="", text=""):
     if not filename:
         raise Exception('No file')
 
-    with open(filename, w, encoding="utf-8") as f:
-        f.write(text)
+    with open(filename, 'w', encoding="utf-8") as f:
+        ch_cn = f.write(text)
+    return ch_cn
