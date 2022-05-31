@@ -6,9 +6,6 @@ from 6-load_from_json_file.py import load_from_json_file as jload
 import sys
 
 
-def load_from_json_file(...):
-    """ load JSON representation from filename """
-
-    with open(filename, 'w', encoding="utf-8") as f:
-        for arg in sys.argv[1:]:
-            f.write(json.dumps(arg))
+with open(filename, 'w', encoding="utf-8") as f:
+    for arg in sys.argv[1:]:
+        f.write(json.dumps(arg))
