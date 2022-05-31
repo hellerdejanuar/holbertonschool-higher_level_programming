@@ -2,6 +2,7 @@
 """ deserializing """
 import json
 
+
 def load_from_json_file(filename):
     """ load JSON representation from filename """
 
