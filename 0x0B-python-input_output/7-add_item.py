@@ -1,11 +1,19 @@
 #!/usr/bin/python3
 """ deserializing """
-import json
-from 5-save_to_json_file import save_to_json_file as jsave
-from 6-load_from_json_file.py import load_from_json_file as jload
 import sys
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
-with open(filename, 'w', encoding="utf-8") as f:
-    for arg in sys.argv[1:]:
-        f.write(json.dumps(arg))
+filename = 'add_item.json'
+args_list = sys.argv[1:]
+
+try:
+    json_file_list = load_from_json_file(filename)
+except FileNotFoundError:
+    save_to_json_file(args_list, 'add_item.json')
+
+else:
+    json_file_list += args_list
+    save_to_json_file(json_file_list, 'add_item.json')
+        
