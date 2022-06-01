@@ -15,4 +15,4 @@ except FileNotFoundError:
 
 else:
     json_file_list += args_list
-    save_to_json_file(json_file_list, 'add_item.json')   
+    save_to_json_file(json_file_list, 'add_item.json')
