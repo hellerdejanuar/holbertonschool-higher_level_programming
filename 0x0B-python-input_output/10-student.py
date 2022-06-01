@@ -20,5 +20,5 @@ class Student:
                     if att in self.__dict__.keys():
                         dic[att] = self.__dict__[att]
                 return dic
-        else:    
+        else:
             return(self.__dict__)
