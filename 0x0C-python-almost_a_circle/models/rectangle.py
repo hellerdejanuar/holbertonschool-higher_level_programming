@@ -50,11 +50,11 @@ class Rectangle(Base):
             for key in kwargs:
                 setattr(self, key, kwargs[key])
 
-    """def to_dictionary(self):
-        for elem in self.__dict__:
-            if elem.keys() in self.attrs
-        return 
-"""
+    def to_dictionary(self):
+        """ returns dict representation of object """
+        return {"id": self.id, "height": self.height,
+                "weight": self.width, "x": self.x, "y": self.y}
+
     # Width
     @property
     def width(self):
