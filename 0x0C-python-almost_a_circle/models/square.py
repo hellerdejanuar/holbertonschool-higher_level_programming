@@ -17,7 +17,6 @@ class Square(Rectangle):
         return (f"[{self.classname}] ({self.id})"
                 f" {self.x}/{self.y} - {self.height}")
 
-
     @property
     def size(self):
         """ retrieves size (width) """
