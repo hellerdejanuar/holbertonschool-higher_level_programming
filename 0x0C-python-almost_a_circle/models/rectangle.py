@@ -33,8 +33,8 @@ class Rectangle(Base):
         print(f"{' ' * self.__x}{'#' * self.__width}\n" * self.height, end="")
 
     def __str__(self):
-        return (f"[{self.classname}] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}")
-
+        return (f"[{self.classname}] ({self.id}) \
+                {self.__x}/{self.__y} - {self.__width}/{self.__height}")
 
     def update(self, *args):
 
@@ -48,44 +48,51 @@ class Rectangle(Base):
             self.__x = args[3]
         try:
             self.__y = args[4]
-    # Width
+
+# Width
+
     @property
     def width(self):
         """ retrieves width """
         return self.__width
+
     @width.setter
     def width(self, width):
         """ sets width """
         int_valid('width', width, 'positive')
         self.__width = width
 
-    # Height
+# Height
+
     @property
     def height(self):
         """ retrieves height """
         return self.__height
+
     @height.setter
     def height(self, height):
         """ sets height """
         int_valid('height', height, 'positive')
         self.__height = height
 
-    # X
+# X
     @property
     def x(self):
         """ retrieves x """
         return self.__width
+
     @x.setter
     def x(self, x):
         """ sets x """
         int_valid('x', x, 'positiveOrZero')
         self.__x = x
 
-    # Y
+# Y
     @property
     def y(self):
         """ retrieves y """
         return self.__y
+
     @y.setter
     def y(self, y):
         """ sets y """
