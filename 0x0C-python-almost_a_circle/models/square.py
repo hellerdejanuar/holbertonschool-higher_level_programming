@@ -32,7 +32,6 @@ class Square(Rectangle):
         """ returns dict representation of object """
         return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
 
-
     @property
     def size(self):
         """ retrieves size (width) """
