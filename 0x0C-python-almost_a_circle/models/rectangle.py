@@ -36,12 +36,13 @@ class Rectangle(Base):
 
     def __str__(self):
         """ description of the object """
-        return (f"[{self.classname}] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}")
+        return (f"[{self.classname}] ({self.id}) \
+                {self.__x}/{self.__y} - {self.__width}/{self.__height}")
 
-    #def update(self, *args):
+    def update(self, *args):
         """ updates attributes based on incoming args """
 
-     """   self.id = args[0]
+        self.id = args[0]
         try:
             self.__width = args[1]
 
@@ -51,7 +52,7 @@ class Rectangle(Base):
             self.__x = args[3]
         try:
             self.__y = args[4]
-"""
+
     # Width
     @property
     def width(self):
