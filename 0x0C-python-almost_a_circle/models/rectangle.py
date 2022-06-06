@@ -26,17 +26,21 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
+        """ returns area """
         return self.__width * self.__height
 
     def display(self):
+        """ a rectangle of # """
         print("\n" * self.__y, end="")
         print(f"{' ' * self.__x}{'#' * self.__width}\n" * self.height, end="")
 
     def __str__(self):
+        """ description of the object """
         return (f"[{self.classname}] ({self.id}) \
                 {self.__x}/{self.__y} - {self.__width}/{self.__height}")
 
     def update(self, *args):
+        """ updates attributes based on incoming args """
 
         self.id = args[0]
         try:
@@ -49,8 +53,7 @@ class Rectangle(Base):
         try:
             self.__y = args[4]
 
-# Width
-
+    # Width
     @property
     def width(self):
         """ retrieves width """
@@ -62,8 +65,7 @@ class Rectangle(Base):
         int_valid('width', width, 'positive')
         self.__width = width
 
-# Height
-
+    # Height
     @property
     def height(self):
         """ retrieves height """
@@ -75,7 +77,7 @@ class Rectangle(Base):
         int_valid('height', height, 'positive')
         self.__height = height
 
-# X
+    # X
     @property
     def x(self):
         """ retrieves x """
@@ -87,7 +89,7 @@ class Rectangle(Base):
         int_valid('x', x, 'positiveOrZero')
         self.__x = x
 
-# Y
+    # Y
     @property
     def y(self):
         """ retrieves y """
