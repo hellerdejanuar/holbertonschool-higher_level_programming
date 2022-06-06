@@ -1,23 +1,12 @@
 #!/usr/bin/python3
-""" Doc """
+""" 5-main """
 from models.rectangle import Rectangle
 
 if __name__ == "__main__":
 
-    r1 = Rectangle(10, 10, 10, 10)
+    r1 = Rectangle(4, 6, 2, 1, 12)
     print(r1)
 
-    r1.update(89)
-    print(r1)
+    r2 = Rectangle(5, 5, 1)
+    print(r2)
 
-    r1.update(89, 2)
-    print(r1)
-
-    r1.update(89, 2, 3)
-    print(r1)
-
-    r1.update(89, 2, 3, 4)
-    print(r1)
-
-    r1.update(89, 2, 3, 4, 5)
-    print(r1)

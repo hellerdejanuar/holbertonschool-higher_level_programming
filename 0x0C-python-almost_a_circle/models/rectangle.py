@@ -36,8 +36,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """ description of the object """
-        return (f"[{self.classname}] ({self.id}) \
-                {self.__x}/{self.__y} - {self.__width}/{self.__height}")
+        return (f"[{self.classname}] ({self.id})"
+        f"{self.__x}/{self.__y} - {self.__width}/{self.__height}")
 
     def update(self, *args):
         """ updates attributes based on incoming args """
