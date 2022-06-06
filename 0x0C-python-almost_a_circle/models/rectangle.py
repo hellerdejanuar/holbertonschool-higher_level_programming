@@ -39,20 +39,21 @@ class Rectangle(Base):
         return (f"[{self.classname}] ({self.id})"
                 f" {self.__x}/{self.__y} - {self.__width}/{self.__height}")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ updates attributes based on incoming args """
-        argc = len(args)
+        if args:
+            argc = len(args)
 
-        if argc >= 1:
-            self.id = args[0]
-        if argc >= 2:
-            self.__width = args[1]
-        if argc >= 3:
-            self.__height = args[2]
-        if argc >= 4:
-            self.__x = args[3]
-        if argc >= 5:
-            self.__y = args[4]
+            if argc >= 1:
+                self.id = args[0]
+            if argc >= 2:
+                self.__width = args[1]
+            if argc >= 3:
+                self.__height = args[2]
+            if argc >= 4:
+                self.__x = args[3]
+            if argc >= 5:
+                self.__y = args[4]
 
     # Width
     @property
