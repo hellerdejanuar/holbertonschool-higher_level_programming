@@ -10,6 +10,7 @@ class Rectangle(Base):
     accepts x,y coordinates """
 
     classname = "Rectangle"
+    attrs = ["id", "width", "height", "x", "y"]
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """ initializes Rectangle """
@@ -42,14 +43,18 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """ updates attributes based on incoming args """
 
-        attrs = ["id", "width", "height", "x", "y"]
         if args:
             for i in range(len(args)):
-                setattr(self, attrs[i], args[i])
+                setattr(self, self.attrs[i], args[i])
         else:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
 
+    """def to_dictionary(self):
+        for elem in self.__dict__:
+            if elem.keys() in self.attrs
+        return 
+"""
     # Width
     @property
     def width(self):

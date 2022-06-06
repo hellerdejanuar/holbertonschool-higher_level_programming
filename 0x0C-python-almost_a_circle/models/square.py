@@ -8,6 +8,7 @@ class Square(Rectangle):
     """ square class """
 
     classname = "Square"
+    attrs = ["id", "size", "x", "y"]
 
     def __init__(self, size, x=0, y=0, id=None):
         """ initializes square """
@@ -19,15 +20,14 @@ class Square(Rectangle):
     
     def update(self, *args, **kwargs):
         """ updates attributes based on incoming args """
-        
-        attrs = ["id", "size", "x", "y"]
+
         if args:
             for i in range(len(args)):
-                setattr(self, attrs[i], args[i])
+                setattr(self, self.attrs[i], args[i])
         else:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
-    
+
     @property
     def size(self):
         """ retrieves size (width) """
