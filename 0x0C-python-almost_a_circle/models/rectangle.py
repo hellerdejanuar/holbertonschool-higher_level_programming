@@ -41,19 +41,14 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ updates attributes based on incoming args """
+        
+        attrs = ["id", "width", "height", "x", "y"]
         if args:
-            argc = len(args)
-
-            if argc >= 1:
-                self.id = args[0]
-            if argc >= 2:
-                self.__width = args[1]
-            if argc >= 3:
-                self.__height = args[2]
-            if argc >= 4:
-                self.__x = args[3]
-            if argc >= 5:
-                self.__y = args[4]
+            for i in range(len(args)):
+                setattr(self, attrs[i], args[i])
+        else:
+            for key in kwargs:
+                setattr(self, key, kwargs[key])
 
     # Width
     @property
