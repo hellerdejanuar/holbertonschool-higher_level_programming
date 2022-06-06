@@ -17,8 +17,9 @@ class Square(Rectangle):
     def __str__(self):
         return (f"[{self.classname}] ({self.id})"
                 f" {self.x}/{self.y} - {self.height}")
+        """
     def update(self, *args, **kwargs):
-        """ updates attributes based on incoming args """
+         updates attributes based on incoming args
 
         if args:
             for i in range(len(args)):
@@ -26,10 +27,10 @@ class Square(Rectangle):
         else:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
-
+"""
     def to_dictionary(self):
         """ returns dict representation of object """
-        return {"id": self.id, "size": self.size, "x": self.x "y": self.y}
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
 
     @property
     def size(self):
