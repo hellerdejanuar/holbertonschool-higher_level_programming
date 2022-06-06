@@ -9,7 +9,7 @@ class Base:
     def __init__(self, id=None):
         """ init """
 
-        if id != None:
+        if id is not None:
             self.id = id
         else:
             Base.nb_obj_increm()
@@ -24,18 +24,17 @@ class Base:
         cls.__nb_objects += n
 
     def int_validator(self, name, value, cond=None):
-        """ validates an int 
+        """ validates an int
             takes name and value
             accepts condition to test for specific values"""
-        
+
         if type(value) != int:
             raise TypeError(f"{name} must be an integer")
 
-        if cond != None:
+        if cond is not None:
             if cond == 'positive':
                 if value <= 0:
                     raise ValueError(f"{name} must be > 0")
             elif cond == 'positiveOrZero':
                 if value < 0:
                     raise ValueError(f"{name} must be >= 0")
-

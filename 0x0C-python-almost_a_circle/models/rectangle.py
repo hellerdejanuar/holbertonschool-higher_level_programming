@@ -3,10 +3,13 @@
 from models.base import Base
 from models.util import int_valid
 
+
 class Rectangle(Base):
     """ rectangle class. inherits id management from Base
     needs width & height
     accepts x,y coordinates """
+
+    classname = "Rectangle"
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """ initializes Rectangle """
@@ -22,6 +25,29 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
+    def area(self):
+        return self.__width * self.__height
+
+    def display(self):
+        print("\n" * self.__y, end="")
+        print(f"{' ' * self.__x}{'#' * self.__width}\n" * self.height, end="")
+
+    def __str__(self):
+        return (f"[{self.classname}] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}")
+
+
+    def update(self, *args):
+
+        self.id = args[0]
+        try:
+            self.__width = args[1]
+
+        try:
+            self.__height = args[2]
+        try:
+            self.__x = args[3]
+        try:
+            self.__y = args[4]
     # Width
     @property
     def width(self):
