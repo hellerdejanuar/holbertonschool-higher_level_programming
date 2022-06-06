@@ -15,7 +15,7 @@ class Square(Rectangle):
 
     def __str__(self):
         return (f"[{self.classname}] ({self.id})"
-                f" {self.__x}/{self.__y} - {self.__height}")
+                f" {self.x}/{self.y} - {self.height}")
     @property
     def size(self):
         """ Size Getter """
