@@ -17,6 +17,7 @@ class Square(Rectangle):
     def __str__(self):
         return (f"[{self.classname}] ({self.id})"
                 f" {self.x}/{self.y} - {self.height}")
+
     def update(self, *args, **kwargs):
         """ updates attributes based on incoming args """
 
