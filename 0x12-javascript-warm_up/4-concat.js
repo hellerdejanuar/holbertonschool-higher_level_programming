@@ -1,7 +1,8 @@
 #!/usr/bin/node
 
-arg0 = 'undefined'
-arg1 = 'undefined'
+let arg0 = 'undefined';
+let arg1 = 'undefined';
+
 if (process.argv[2]) {
   arg0 = process.argv[2];
 }
