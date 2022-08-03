@@ -1,6 +1,7 @@
 #!/usr/bin/node
 
-exports.logMe = function (item)
-
-<number arguments already printed>: <current argument value>
+let cn = 0;
+exports.logMe = function (item) {
+  console.log(cn + ': ' + item);
+  cn++;
 };
