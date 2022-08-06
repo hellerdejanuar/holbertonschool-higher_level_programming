@@ -17,15 +17,16 @@ if __name__ == '__main__':
 
     # Query --
     query_statement = "SELECT cities.name\
-                        FROM cities\
-                        WHERE cities.state_id = 1\
+                        FROM cities, states\
+                        WHERE cities.state_id = states.id AND states.name = %(state)s\
                         ORDER BY cities.id"
     # ToDo: request state.id corresponding
     # to STATE_IN
     cursor.execute(query_statement, {'state' : STATE_IN})
     cities_query = cursor.fetchall()
-    for city in cities_query:
-        print(city)
+    for i in range(len(cities_query) - 1):
+        print(cities_query[i][0], end=', ')
+    print(cities_query[i + 1][0])
 
     # Cleanup --
     cursor.close()
