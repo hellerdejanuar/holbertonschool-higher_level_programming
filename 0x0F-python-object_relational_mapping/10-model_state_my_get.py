@@ -23,7 +23,8 @@ if __name__ == "__main__":
 
     query = session.query(State.name, State.id).\
         filter(State.name.like(STATE_IN))
-    if query:
+
+    if query.all():
         for state in query:
             print(f'{state.id}')
     else:
