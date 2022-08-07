@@ -19,10 +19,9 @@ if __name__ == "__main__":
                        {PASSWD_IN}@{HOST_IN}/{DB_IN}')
     session = Session(bind=engine)
 
-    query = session.query(State.name, State.id).order_by(State.id).first()
-    if query:
-        state_id, name = query
-        print(f'{name}: {state_id}')
+    state = session.query(State.name, State.id).order_by(State.id).first()
+    if state:
+        print(f'{state.id}: {state.name}')
     else:
         print('Nothing')
 
