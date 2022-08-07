@@ -19,7 +19,7 @@ if __name__ == '__main__':
     states_query = cursor.fetchall()
     for state in states_query:
         print(state)
-    
+
     # Close all cursors
     cursor.close()
     # Close all databases
