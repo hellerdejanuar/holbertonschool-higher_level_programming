@@ -19,7 +19,8 @@ if __name__ == "__main__":
                        {PASSWD_IN}@{HOST_IN}/{DB_IN}')
     session = Session(bind=engine)
 
-    query = session.query(State.name, State.id).filter(State.name.op('regexp')('.*a.*'))
+    query = session.query(State.name, State.id).\
+        filter(State.name.op('regexp')('.*a.*'))
     if query:
         for state in query:
             print(f'{state.id}: {state.name}')
