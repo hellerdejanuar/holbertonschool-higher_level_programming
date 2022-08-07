@@ -17,12 +17,9 @@ if __name__ == '__main__':
                    WHERE name = '{}' \
                    ORDER BY states.id ASC".format(STATE_IN))
     states_query = cursor.fetchall()
-    if states_query:
-        for state in states_query:
-            print(state)
-    else:
-        print()
-
+    for state in states_query:
+        print(state)
+    
     # Close all cursors
     cursor.close()
     # Close all databases
