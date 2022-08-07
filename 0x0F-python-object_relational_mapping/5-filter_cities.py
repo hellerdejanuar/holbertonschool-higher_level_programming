@@ -21,7 +21,7 @@ if __name__ == '__main__':
                         WHERE cities.state_id = states.id\
                         AND states.name = %(state)s\
                         ORDER BY cities.id"
-    cursor.execute(query_statement, {'state' : STATE_IN})
+    cursor.execute(query_statement, {'state': STATE_IN})
     cities_query = cursor.fetchall()
 
     # Print results --
