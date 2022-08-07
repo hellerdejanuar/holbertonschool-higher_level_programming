@@ -18,7 +18,8 @@ if __name__ == '__main__':
                    ORDER BY states.id")
     states_query = cursor.fetchall()
     for state in states_query:
-        print(state)
+        if state[1][0] == 'N':
+            print(state)
 
     # Close all cursors
     cursor.close()
