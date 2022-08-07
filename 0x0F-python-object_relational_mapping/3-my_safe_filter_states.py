@@ -14,11 +14,11 @@ if __name__ == '__main__':
                          passwd=PASSWD_IN, db=DB_IN)
     cursor = db.cursor()
     query = "SELECT * FROM states WHERE name=%(name)s ORDER BY states.id ASC"
-    cursor.execute(query, {'name' : STATE_IN})
+    cursor.execute(query, {'name': STATE_IN})
     states_query = cursor.fetchall()
     for state in states_query:
         print(state)
-    
+
     # Close all cursors
     cursor.close()
     # Close all databases
