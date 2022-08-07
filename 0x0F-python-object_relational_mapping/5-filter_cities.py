@@ -26,9 +26,13 @@ if __name__ == '__main__':
 
     # Print results --
     if cities_query:
-        for i in range(len(cities_query) - 1):
-            print(cities_query[i][0], end=', ')
-        print(cities_query[i + 1][0])
+        for i, city in enumerate(cities_query):
+            print(city[0], end='')
+            if i != len(cities_query) - 1:
+                print(', ', end='')
+            else:
+                print()
+
 
     # Cleanup --
     cursor.close()
