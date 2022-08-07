@@ -5,13 +5,15 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String # ??
+from sys import argv
 
-user = ''
-host = ''
-database = ''
+#USER_IN = argv[1]
+#PASSWD_IN = argv[2]
+#DB_IN = argv[3]
+#HOST_IN = 'localhost'
 
-engine = create_engine(f'mysql://{user}:{pass}@{host}/{database}')
-Base = declarative_base
+# engine = create_engine(f'mysql://{USER_IN}:{PASSWD_IN}@{HOST_IN}/{DB_IN}')
+Base = declarative_base()
 
 class State(Base):
     __tablename__ = 'states'
