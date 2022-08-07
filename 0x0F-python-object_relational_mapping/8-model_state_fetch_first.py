@@ -12,8 +12,10 @@ PASSWD_IN = argv[2]
 DB_IN = argv[3]
 HOST_IN = 'localhost'
 
-engine = create_engine(f'mysql+mysqldb://{USER_IN}:{PASSWD_IN}@{HOST_IN}/{DB_IN}')
+engine = create_engine(f'mysql+mysqldb://{USER_IN}:\
+                       {PASSWD_IN}@{HOST_IN}/{DB_IN}')
 session = Session(bind=engine)
+
 
 query = session.query(State.name, State.id).order_by(State.id).first()
 state_id, name = query
