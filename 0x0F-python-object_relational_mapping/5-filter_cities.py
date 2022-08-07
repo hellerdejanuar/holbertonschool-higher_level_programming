@@ -7,7 +7,10 @@ if __name__ == '__main__':
     USER_IN = argv[1]
     PASSWD_IN = argv[2]
     DB_IN = argv[3]
-    STATE_IN = argv[4]
+    STATE_IN = ''
+    for x in range(4, len(argv)):
+        STATE_IN += argv[x]
+        STATE_IN += ' '
     PORT = 3306
 
     # Init db & cur --
