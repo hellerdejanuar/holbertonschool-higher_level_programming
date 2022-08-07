@@ -19,9 +19,11 @@ if __name__ == "__main__":
                        {PASSWD_IN}@{HOST_IN}/{DB_IN}')
     session = Session(bind=engine)
 
-
     query = session.query(State.name, State.id).order_by(State.id).first()
-    state_id, name = query
-    print(f'{name}: {state_id}')
+    if query:
+        state_id, name = query
+        print(f'{name}: {state_id}')
+    else:
+        print('Nothing')
 
     session.close()
