@@ -32,7 +32,8 @@ if __name__ == '__main__':
                 print(', ', end='')
             else:
                 print()
-
+    else:
+        print()
 
     # Cleanup --
     cursor.close()
