@@ -16,7 +16,7 @@ engine = create_engine(f'mysql+mysqldb://{USER_IN}:{PASSWD_IN}@{HOST_IN}/{DB_IN}
 session = Session(bind=engine)
 
 query = session.query(State.name, State.id).order_by(State.id).first()
-for name, state_id in query:
-    print('{state_id}: {name}')
+state_id, name = query
+print(f'{name}: {state_id}')
 
 session.close()

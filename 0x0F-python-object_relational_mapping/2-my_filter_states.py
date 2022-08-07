@@ -18,7 +18,8 @@ if __name__ == '__main__':
                    ORDER BY states.id ASC".format(STATE_IN))
     states_query = cursor.fetchall()
     for state in states_query:
-        print(state)
+        if state[1] == STATE_IN[0]:
+            print(state)
 
     # Close all cursors
     cursor.close()
