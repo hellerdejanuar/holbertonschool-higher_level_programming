@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-""" Table fetcher """
+""" Fetches the first state ordered by ID """
+
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy import Column, Integer, String
 from sqlalchemy import select
 from sys import argv
+
 
 USER_IN = argv[1]
 PASSWD_IN = argv[2]
