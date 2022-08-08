@@ -1,1 +1,1 @@
-This repository contains projects on Python and JSON for Holberton School
+This repository contains projects on high level programming for Holberton School
