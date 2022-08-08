@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Fetches the first state ordered by ID """
+""" changes the name of a State object from the database """
 
 from model_state import Base, State
 from sqlalchemy import create_engine
@@ -7,6 +7,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import Column, Integer, String
 from sqlalchemy import select
 from sys import argv
+
 
 if __name__ == "__main__":
 
@@ -17,13 +18,9 @@ if __name__ == "__main__":
 
     engine = create_engine(f'mysql+mysqldb://{USER_IN}:\
                        {PASSWD_IN}@{HOST_IN}/{DB_IN}')
-    session = Session(bind=engine)
 
-    query = session.query(State.name, State.id).filter(State.name.op('regexp')('.*a.*'))
-    if query:
-        for state_id, name in query:
-            print(f'{name}: {state_id}')
-    else:
-        print('Nothing')
-
-    session.close()
+    with Session(bind=engine) as session:
+        delete_query = session.query(State).filter(State.name.contains("a"))
+        for obj in delete_query:
+            session.delete(obj)
+        session.commit()

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Adds the State object “Louisiana” to the database """
+""" changes the name of a State object from the database """
 
 from model_state import Base, State
 from sqlalchemy import create_engine
@@ -15,17 +15,13 @@ if __name__ == "__main__":
     PASSWD_IN = argv[2]
     DB_IN = argv[3]
     HOST_IN = 'localhost'
-    STATE_IN = ' '.join(argv[4:])
     UPDATE_ID = '2'
     NEW_STATE_NAME = 'New Mexico'
 
     engine = create_engine(f'mysql+mysqldb://{USER_IN}:\
                        {PASSWD_IN}@{HOST_IN}/{DB_IN}')
 
-    # New state init --
-    new_state = State(name=NEW_STATE_NAME)
-
-    # Add to the database
+    # Update obj locally and commit
     with Session(bind=engine) as session:
 
         updated_obj = session.query(State).get({'id': UPDATE_ID})
