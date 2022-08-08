@@ -18,6 +18,7 @@ engine = create_engine(f'mysql+mysqldb://{USER_IN}:\
 with Session(bind=engine) as session:
     city_q = (session.query(City, State)
               .join(State, State.id == City.state_id)
+              .order_by(City.id)
               .all())
 
     for city, state in city_q:
