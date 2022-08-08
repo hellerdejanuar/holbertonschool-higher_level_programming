@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Fetches the first state ordered by ID """
+""" Adds the State object “Louisiana” to the database """
 
 from model_state import Base, State
 from sqlalchemy import create_engine
@@ -16,16 +16,17 @@ if __name__ == "__main__":
     DB_IN = argv[3]
     HOST_IN = 'localhost'
     STATE_IN = ' '.join(argv[4:])
+    NEW_STATE_NAME = 'Louisiana'
 
     engine = create_engine(f'mysql+mysqldb://{USER_IN}:\
                        {PASSWD_IN}@{HOST_IN}/{DB_IN}')
 
-    with Session(bind=engine) as session:
-        query = session.query(State.name, State.id).\
-            filter(State.name.like(STATE_IN))
+    # New state init --
+    new_state = State(name=NEW_STATE_NAME)
 
-        if query.all():
-            for state in query:
-                print(state.id)
-        else:
-            print('Not found')
+    # Add to the database
+    with Session(bind=engine) as session:
+
+        session.add(new_state)
+        session.commit()
+        print(new_state.id)
