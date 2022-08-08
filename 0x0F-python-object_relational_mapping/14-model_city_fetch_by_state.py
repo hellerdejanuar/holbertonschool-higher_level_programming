@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ Cities fetcher """
+
 from model_state import Base, State
 from model_city import City
 from sqlalchemy import create_engine
@@ -11,6 +12,7 @@ USER_IN = argv[1]
 PASSWD_IN = argv[2]
 DB_IN = argv[3]
 HOST_IN = 'localhost'
+
 
 engine = create_engine(f'mysql+mysqldb://{USER_IN}:\
                         {PASSWD_IN}@{HOST_IN}/{DB_IN}')
