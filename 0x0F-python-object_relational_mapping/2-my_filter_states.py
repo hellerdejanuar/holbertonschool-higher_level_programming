@@ -14,12 +14,11 @@ if __name__ == '__main__':
                          passwd=PASSWD_IN, db=DB_IN)
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states \
-                   WHERE name = '{}' \
+                   WHERE name = BINARY '{}' \
                    ORDER BY states.id ASC".format(STATE_IN))
     states_query = cursor.fetchall()
     for state in states_query:
-        if state[1] == STATE_IN[0]:
-            print(state)
+        print(state)
 
     # Close all cursors
     cursor.close()
