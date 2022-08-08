@@ -12,13 +12,13 @@ PASSWD_IN = argv[2]
 DB_IN = argv[3]
 HOST_IN = 'localhost'
 
-engine = create_engine(f'mysql+mysqldb://{USER_IN}:{PASSWD_IN}@{HOST_IN}/{DB_IN}')
+engine = create_engine(f'mysql+mysqldb://{USER_IN}:\
+                        {PASSWD_IN}@{HOST_IN}/{DB_IN}')
 
 with Session(bind=engine) as session:
-    city_q = (session.query(City)
-            .join(State, State.id == City.state_id)
-            .all())
+    city_q = (session.query(City, State)
+              .join(State, State.id == City.state_id)
+              .all())
 
-    for obj in city_q:
-        print(obj.__dict__)
-
+    for city, state in city_q:
+        print(f'{state.name}: ({city.id}) {city.name}')
