@@ -15,7 +15,6 @@ if __name__ == '__main__':
     DB_IN = argv[3]
     HOST_IN = 'localhost'
 
-
     engine = create_engine(f'mysql+mysqldb://{USER_IN}:\
                         {PASSWD_IN}@{HOST_IN}/{DB_IN}')
 
