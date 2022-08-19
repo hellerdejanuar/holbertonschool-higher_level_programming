@@ -1,3 +1,3 @@
 #!/bin/bash
-# takes in a URL and displays all HTTP methods the server will accept
-curl -sL -X OPTIONS "$1" 
+# parses the specified parameter from the request header. needs the ip as argument
+curl -sI "$1" | grep  "Allow: " | sed 's/^.*: //'
