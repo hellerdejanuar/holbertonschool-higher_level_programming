@@ -9,10 +9,10 @@ from urllib import request, parse
 import urllib.error
 
 if __name__ == "__main__":
-    try:
-        with request.urlopen(argv[1]) as resp:
+    with request.urlopen(argv[1]) as resp:
+        try:
             html = resp.read().decode('utf-8')
             print(html)
-    except urllib.error.HTTPError as error:
-        print(f'Error code: {error.code}')
-        raise
+        except urllib.error.HTTPError as error:
+            print(f'Error code: {error.code}')
+            raise error
