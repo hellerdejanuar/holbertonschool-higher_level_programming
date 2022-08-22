@@ -10,7 +10,7 @@ if __name__ == "__main__":
     from sys import argv
 
     url = 'http://0.0.0.0:5000/search_user'
-    data = {}
+    data_dic = {}
 
     # defining data variables
     if len(argv) > 1:
@@ -19,9 +19,7 @@ if __name__ == "__main__":
         data_dic['q'] = ''
 
     # request
-    resp = requests.post(url, data=data)
-    except requests.exceptions.ConnectionError:
-        pass
+    resp = requests.post(url, data=data_dic)
 
     # interpreting json
     try:
