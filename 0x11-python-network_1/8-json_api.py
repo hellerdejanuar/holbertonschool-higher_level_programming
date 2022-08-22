@@ -14,12 +14,14 @@ if __name__ == "__main__":
 
     # defining data variables
     if len(argv) > 1:
-        data['q'] = sys.argv[1]
+        data_dic['q'] = argv[1]
     else:
-        data['q'] = ''
+        data_dic['q'] = ''
 
     # request
     resp = requests.post(url, data=data)
+    except requests.exceptions.ConnectionError:
+        pass
 
     # interpreting json
     try:
