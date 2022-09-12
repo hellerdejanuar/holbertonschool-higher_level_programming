@@ -2,8 +2,7 @@
 
 const axios = require('axios').default;
 
-url = 'https://swapi-api.hbtn.io/api/films/'
-
+const url = 'https://swapi-api.hbtn.io/api/films/';
 
 axios.get(url + process.argv[2])
   .then(function (response) {
@@ -12,7 +11,7 @@ axios.get(url + process.argv[2])
   })
   .catch(function (error) {
     // handle error
-    console.log(response);
+    console.log(error);
   })
   .then(function () {
     // always executed
