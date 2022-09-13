@@ -20,9 +20,9 @@ axios.get(url)
     }
     console.log(dict);
   })
-  .catch(function (error) {
+  .catch(function (err) {
     // handle error
-    console.log(error);
+    console.log(err);
   })
   .then(function () {
     // always executed
