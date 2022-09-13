@@ -7,7 +7,7 @@ axios.get(url)
   .then(function (response) {
     // handle success
     const charactersList = response.data.characters;
-    for (const i in characters_list) {
+    for (const i in charactersList) {
       axios.get(charactersList[i])
         .then(function (character) {
           console.log(character.data.name);
