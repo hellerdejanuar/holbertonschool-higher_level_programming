@@ -13,7 +13,6 @@ axios.get(url)
       if (task.completed === true) {
         if (!(task.userId in dict)) {
           dict[task.userId] = 0;
-          console.log('Bang');
         }
         dict[task.userId] += 1;
       }
