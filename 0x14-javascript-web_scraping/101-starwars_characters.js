@@ -4,11 +4,11 @@ const axios = require('axios').default;
 const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
 
 axios.get(url)
-  .then(function (response) {
+  .then(async function (response) {
     // handle success
     const charactersList = response.data.characters;
     for (const i in charactersList) {
-      axios.get(charactersList[i])
+      await axios.get(charactersList[i])
         .then(function (character) {
           console.log(character.data.name);
         });
