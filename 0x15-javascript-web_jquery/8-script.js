@@ -1,6 +1,5 @@
-$.get("https://swapi-api.hbtn.io/api/people/5/?format=json", function (req) {
-  $.each(req.results, function (element => { 
-    $('UL#list_movies').append("<li>" + element.name + "</li>");
-    console.log(element.name);
+$.get("https://swapi-api.hbtn.io/api/films/?format=json", function (req) {
+  $.each(req.results, function (index, element) { 
+    $('UL#list_movies').append("<li>" + element.title + "</li>");
   });
 });
